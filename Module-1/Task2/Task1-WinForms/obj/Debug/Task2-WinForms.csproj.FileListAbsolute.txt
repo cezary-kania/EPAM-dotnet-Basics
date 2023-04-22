@@ -1,0 +1,14 @@
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\bin\Debug\Task1-WinForms.exe.config
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\bin\Debug\Task1-WinForms.exe
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\bin\Debug\Task1-WinForms.pdb
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\bin\Debug\Task2-GreetingLibrary.dll
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\bin\Debug\Task2-GreetingLibrary.pdb
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\obj\Debug\Task2-WinForms.csproj.AssemblyReference.cache
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\obj\Debug\Task2-WinForms.csproj.SuggestedBindingRedirects.cache
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\obj\Debug\Task1_WinForms.Mainform.resources
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\obj\Debug\Task1_WinForms.Properties.Resources.resources
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\obj\Debug\Task2-WinForms.csproj.GenerateResource.cache
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\obj\Debug\Task2-WinForms.csproj.CoreCompileInputs.cache
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\obj\Debug\Task2-WinForms.csproj.CopyComplete
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\obj\Debug\Task1-WinForms.exe
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task1-WinForms\obj\Debug\Task1-WinForms.pdb

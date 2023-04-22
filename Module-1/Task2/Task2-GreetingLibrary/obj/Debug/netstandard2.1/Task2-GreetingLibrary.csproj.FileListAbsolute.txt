@@ -1,0 +1,10 @@
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\bin\Debug\netstandard2.1\Task2-GreetingLibrary.deps.json
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\bin\Debug\netstandard2.1\Task2-GreetingLibrary.dll
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\bin\Debug\netstandard2.1\Task2-GreetingLibrary.pdb
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\obj\Debug\netstandard2.1\Task2-GreetingLibrary.csproj.AssemblyReference.cache
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\obj\Debug\netstandard2.1\Task2-GreetingLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\obj\Debug\netstandard2.1\Task2-GreetingLibrary.AssemblyInfoInputs.cache
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\obj\Debug\netstandard2.1\Task2-GreetingLibrary.AssemblyInfo.cs
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\obj\Debug\netstandard2.1\Task2-GreetingLibrary.csproj.CoreCompileInputs.cache
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\obj\Debug\netstandard2.1\Task2-GreetingLibrary.dll
+C:\Users\cezar\source\repos\EPAM-Basics\M1\Task2\Task2-GreetingLibrary\obj\Debug\netstandard2.1\Task2-GreetingLibrary.pdb

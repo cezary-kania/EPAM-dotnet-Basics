@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Task2-Console/1.0.0": {
+        "dependencies": {
+          "Task2-GreetingLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Task2-Console.dll": {}
+        }
+      },
+      "Task2-GreetingLibrary/1.0.0": {
+        "runtime": {
+          "Task2-GreetingLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Task2-Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Task2-GreetingLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
