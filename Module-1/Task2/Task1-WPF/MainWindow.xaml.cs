@@ -21,7 +21,7 @@ namespace Task1_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly IConcatenationService _concatenationService = new ConcatenationService();
+        private readonly IGreetingService _greetingService = new GreetingService();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace Task1_WPF
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             var username = txtUsername.Text;
-            var message = _concatenationService.GetMessage(DateTime.Now, username);
+            var message = _greetingService.GetMessage(username);
             MessageBox.Show(message, "Hello World", MessageBoxButton.OK);
         }
     }

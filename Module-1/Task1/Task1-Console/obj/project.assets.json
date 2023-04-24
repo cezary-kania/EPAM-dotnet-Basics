@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cezar\\source\\repos\\EPAM-Basics\\M1\\Task1\\Task1-Console\\Task1-Console.csproj",
+      "projectUniqueName": "C:\\Users\\cezar\\source\\repos\\EPAM-Basics\\Module-1\\Task1\\Task1-Console\\Task1-Console.csproj",
       "projectName": "Task1-Console",
-      "projectPath": "C:\\Users\\cezar\\source\\repos\\EPAM-Basics\\M1\\Task1\\Task1-Console\\Task1-Console.csproj",
+      "projectPath": "C:\\Users\\cezar\\source\\repos\\EPAM-Basics\\Module-1\\Task1\\Task1-Console\\Task1-Console.csproj",
       "packagesPath": "C:\\Users\\cezar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cezar\\source\\repos\\EPAM-Basics\\M1\\Task1\\Task1-Console\\obj\\",
+      "outputPath": "C:\\Users\\cezar\\source\\repos\\EPAM-Basics\\Module-1\\Task1\\Task1-Console\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

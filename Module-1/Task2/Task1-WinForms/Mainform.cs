@@ -6,7 +6,7 @@ namespace Task1_WinForms
 {
     public partial class Mainform : Form
     {
-        private readonly IConcatenationService _concatenationService = new ConcatenationService();
+        private readonly IGreetingService _greetingService = new GreetingService();
         public Mainform()
         {
             InitializeComponent();
@@ -15,7 +15,7 @@ namespace Task1_WinForms
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             var username = InputName.Text;
-            LabelOutput.Text = _concatenationService.GetMessage(DateTime.Now, username);
+            LabelOutput.Text = _greetingService.GetMessage(username);
         }
     }
 }

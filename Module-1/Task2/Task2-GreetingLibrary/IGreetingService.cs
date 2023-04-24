@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Task2_GreetingLibrary
 {
-    public interface IConcatenationService
+    public interface IGreetingService
     {
-        string GetMessage(DateTime currentTime, string username);
+        string GetMessage(string username);
     }
 }

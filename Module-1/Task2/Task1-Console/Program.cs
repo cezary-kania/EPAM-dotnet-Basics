@@ -1,6 +1,6 @@
 ﻿using Task2_GreetingLibrary;
 
-IConcatenationService service = new ConcatenationService();
+IGreetingService service = new GreetingService();
 
-var username = args.Length > 0 ? args[0] : "";
-Console.WriteLine(service.GetMessage(DateTime.Now, username));
+var username = args.Length > 0 ? args[0] : string.Empty;
+Console.WriteLine(service.GetMessage(username));
