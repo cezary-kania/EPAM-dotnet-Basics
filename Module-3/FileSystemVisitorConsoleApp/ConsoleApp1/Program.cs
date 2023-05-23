@@ -8,17 +8,17 @@ var config = new ConfigurationBuilder()
 var rootPath = config["RootFolderPath"];
 
 var fileSystemVisitor = new FileSystemVisitor(rootPath, x => x.EndsWith(".pdf"));
-fileSystemVisitor.Start += (sender, e) =>
+fileSystemVisitor.OnStart += (sender, e) =>
 {
     Console.WriteLine("Start");
 };
 
-fileSystemVisitor.FileFound += (sender, e) =>
+fileSystemVisitor.OnFileFound += (sender, e) =>
 {
     Console.WriteLine($"File found: {e.Entry}");
 };
 
-fileSystemVisitor.DirectoryFound += (sender, e) =>
+fileSystemVisitor.OnDirectoryFound += (sender, e) =>
 {
     if (e.Entry.Contains("Ang"))
     {

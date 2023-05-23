@@ -28,7 +28,7 @@ public class FileSystemVisitorTests
         constructVisitorAction
             .Should()
             .Throw<ArgumentException>()
-            .WithMessage("Invalid root folder path.");
+            .WithMessage("Invalid root folder path. (Parameter 'rootFolderPath')");
     }
 
     [Fact]
@@ -43,7 +43,7 @@ public class FileSystemVisitorTests
         constructVisitorAction
             .Should()
             .Throw<ArgumentException>()
-            .WithMessage("Invalid root folder path.");
+            .WithMessage("Invalid root folder path. (Parameter 'rootFolderPath')");
     }
     
     [Fact]
@@ -120,7 +120,7 @@ public class FileSystemVisitorTests
             .Returns(true);
         var fileSystemVisitor = new FileSystemVisitor(_directoryMock.Object, "C:\\test");
         var eventRaised = false;
-        fileSystemVisitor.Start += (sender, args) => { eventRaised = true; };
+        fileSystemVisitor.OnStart += (sender, args) => { eventRaised = true; };
 
         // Act
         var result = fileSystemVisitor.GetEnumerator().MoveNext();
@@ -140,7 +140,7 @@ public class FileSystemVisitorTests
         _directoryMock.Setup(d => d.EnumerateFileSystemEntries(rootDirectoryPath))
             .Returns(new List<string> { $"{rootDirectoryPath}\\f1", $"{rootDirectoryPath}\\f2" });
         var eventRaised = false;
-        fileSystemVisitor.Finish += (sender, args) => { eventRaised = true; };
+        fileSystemVisitor.OnFinish += (sender, args) => { eventRaised = true; };
 
         // Act
         fileSystemVisitor.GetEnumerator().MoveNext();
@@ -175,7 +175,7 @@ public class FileSystemVisitorTests
         var expectedEntries = new List<string> { file1Path, file2Path, file3Path, file4Path };
         var actualEntries = new List<string>();
         var fileSystemVisitor = new FileSystemVisitor(_directoryMock.Object, rootDirectoryPath);
-        fileSystemVisitor.FileFound += (sender, e) =>
+        fileSystemVisitor.OnFileFound += (sender, e) =>
         {
             actualEntries.Add(e.Entry);
         };
@@ -209,7 +209,7 @@ public class FileSystemVisitorTests
         var expectedEntries = new List<string> { dir1Path, dir2Path, dir3Path };
         var actualEntries = new List<string>();
         var fileSystemVisitor = new FileSystemVisitor(_directoryMock.Object, rootDirectoryPath);
-        fileSystemVisitor.DirectoryFound += (sender, e) =>
+        fileSystemVisitor.OnDirectoryFound += (sender, e) =>
         {
             actualEntries.Add(e.Entry);
         };
@@ -245,7 +245,7 @@ public class FileSystemVisitorTests
         var actualEntries = new List<string>();
         Func<string, bool> filter = x => x.EndsWith(".jpg");
         var fileSystemVisitor = new FileSystemVisitor(_directoryMock.Object, rootDirectoryPath, filter);
-        fileSystemVisitor.FilteredFileFound += (sender, e) =>
+        fileSystemVisitor.OnFilteredFileFound += (sender, e) =>
         {
             actualEntries.Add(e.Entry);
         };
@@ -283,7 +283,7 @@ public class FileSystemVisitorTests
         var fileSystemVisitor = new FileSystemVisitor(_directoryMock.Object, rootDirectoryPath, filter);
         
         // Act
-        fileSystemVisitor.FilteredDirectoryFound += (sender, e) =>
+        fileSystemVisitor.OnFilteredDirectoryFound += (sender, e) =>
         {
             actualEntries.Add(e.Entry);
         };
@@ -317,7 +317,7 @@ public class FileSystemVisitorTests
         var fileSystemVisitor = new FileSystemVisitor(_directoryMock.Object, rootDirectoryPath);
         
         // Act
-        fileSystemVisitor.DirectoryFound += (sender, e) =>
+        fileSystemVisitor.OnDirectoryFound += (sender, e) =>
         {
             if (e.Entry.EndsWith("dir3"))
             {
@@ -353,7 +353,7 @@ public class FileSystemVisitorTests
         var fileSystemVisitor = new FileSystemVisitor(_directoryMock.Object, rootDirectoryPath);
         
         // Act
-        fileSystemVisitor.FileFound += (sender, e) =>
+        fileSystemVisitor.OnFileFound += (sender, e) =>
         {
             if (e.Entry.EndsWith("file3.jpg"))
             {

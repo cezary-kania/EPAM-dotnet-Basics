@@ -9,19 +9,19 @@ public sealed class FileSystemVisitor : IEnumerable<string>
     private readonly Func<string, bool>? _filter;
     private readonly IDirectory _directory;
 
-    public event EventHandler<EventArgs>? Start;
-    public event EventHandler<EventArgs>? Finish;
-    public event EventHandler<FileSystemVisitorEventArgs>? FileFound;
-    public event EventHandler<FileSystemVisitorEventArgs>? DirectoryFound;
-    public event EventHandler<FileSystemVisitorEventArgs>? FilteredFileFound;
-    public event EventHandler<FileSystemVisitorEventArgs>? FilteredDirectoryFound;
+    public event EventHandler<EventArgs>? OnStart;
+    public event EventHandler<EventArgs>? OnFinish;
+    public event EventHandler<FileSystemVisitorEventArgs>? OnFileFound;
+    public event EventHandler<FileSystemVisitorEventArgs>? OnDirectoryFound;
+    public event EventHandler<FileSystemVisitorEventArgs>? OnFilteredFileFound;
+    public event EventHandler<FileSystemVisitorEventArgs>? OnFilteredDirectoryFound;
 
     public FileSystemVisitor(IDirectory directory, string? rootFolderPath)
     {
         _directory = directory ?? throw new ArgumentNullException(nameof(directory));
         if (string.IsNullOrEmpty(rootFolderPath) || !_directory.Exists(rootFolderPath))
         {
-            throw new ArgumentException("Invalid root folder path.");
+            throw new ArgumentException("Invalid root folder path.", nameof(rootFolderPath));
         }
         _rootFolderPath = rootFolderPath;
     }
@@ -43,20 +43,14 @@ public sealed class FileSystemVisitor : IEnumerable<string>
 
     public IEnumerator<string> GetEnumerator()
     {
-        OnStart();
+        OnStart?.Invoke(this, EventArgs.Empty);
         foreach (var entry in Traverse(_rootFolderPath))
         {
             yield return entry;
         }
-        OnFinish();
+        OnFinish?.Invoke(this, EventArgs.Empty);
     }
 
-    private void OnStart() => Start?.Invoke(this, EventArgs.Empty);
-    private void OnFinish() => Finish?.Invoke(this, EventArgs.Empty);
-    private void OnFileFound(FileSystemVisitorEventArgs e) => FileFound?.Invoke(this, e);
-    private void OnDirectoryFound(FileSystemVisitorEventArgs e) => DirectoryFound?.Invoke(this, e);
-    private void OnFilteredFileFound(FileSystemVisitorEventArgs e) => FilteredFileFound?.Invoke(this, e);
-    private void OnFilteredDirectoryFound(FileSystemVisitorEventArgs e) => FilteredDirectoryFound?.Invoke(this, e);
     public class FileSystemVisitorEventArgs : EventArgs
     {
         public string Entry { get; }
@@ -82,10 +76,10 @@ public sealed class FileSystemVisitor : IEnumerable<string>
             var entryFoundArgs = new FileSystemVisitorEventArgs(entry);
             if (isDirectory)
             {
-                OnDirectoryFound(entryFoundArgs);
+                OnDirectoryFound?.Invoke(this, entryFoundArgs);
             } else
             {
-                OnFileFound(entryFoundArgs);
+                OnFileFound?.Invoke(this, entryFoundArgs);
             }
             if (entryFoundArgs.Exclude)
             {
@@ -104,11 +98,11 @@ public sealed class FileSystemVisitor : IEnumerable<string>
                 var filteredEntryFoundArgs = new FileSystemVisitorEventArgs(entry);
                 if (isDirectory)
                 {
-                    OnFilteredDirectoryFound(filteredEntryFoundArgs);
+                    OnFilteredDirectoryFound?.Invoke(this, filteredEntryFoundArgs);
                 } 
                 else
                 {
-                    OnFilteredFileFound(filteredEntryFoundArgs);
+                    OnFilteredFileFound?.Invoke(this, filteredEntryFoundArgs);
                 }
                 if (filteredEntryFoundArgs.Exclude)
                 {
