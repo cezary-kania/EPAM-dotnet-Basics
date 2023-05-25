@@ -1,11 +1,10 @@
 ﻿using System;
 
-namespace Task3.Exceptions
+namespace Task3.Exceptions;
+
+public class InvalidUserIdException : ArgumentException
 {
-    public class InvalidUserIdException : ArgumentException
+    public InvalidUserIdException() : base("Invalid userId")
     {
-        public InvalidUserIdException() : base("Invalid userId")
-        {
-        }
     }
 }

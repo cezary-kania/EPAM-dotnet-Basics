@@ -2,36 +2,33 @@
 using Task3.DoNotChange;
 using Task3.Exceptions;
 
-namespace Task3
+namespace Task3;
+
+public class UserTaskService
 {
-    public class UserTaskService
+    private readonly IUserDao _userDao;
+
+    public UserTaskService(IUserDao userDao)
     {
-        private readonly IUserDao _userDao;
+        _userDao = userDao;
+    }
 
-        public UserTaskService(IUserDao userDao)
+    public void AddTaskForUser(int userId, UserTask task)
+    {
+        if (userId < 0)
+            throw new InvalidUserIdException();
+
+        var user = _userDao.GetUser(userId);
+        if (user == null)
+            throw new UserNotFoundException();
+
+        var tasks = user.Tasks;
+        foreach (var t in tasks)
         {
-            _userDao = userDao;
+            if (string.Equals(task.Description, t.Description, StringComparison.OrdinalIgnoreCase))
+                throw new TaskAlreadyExistsException();
         }
 
-        public int AddTaskForUser(int userId, UserTask task)
-        {
-            if (userId < 0)
-                throw new InvalidUserIdException();
-
-            var user = _userDao.GetUser(userId);
-            if (user == null)
-                throw new UserNotFoundException();
-
-            var tasks = user.Tasks;
-            foreach (var t in tasks)
-            {
-                if (string.Equals(task.Description, t.Description, StringComparison.OrdinalIgnoreCase))
-                    throw new TaskAlreadyExistsException();
-            }
-
-            tasks.Add(task);
-
-            return 0;
-        }
+        tasks.Add(task);
     }
 }

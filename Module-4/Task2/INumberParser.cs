@@ -1,7 +1,6 @@
-﻿namespace Task2
+﻿namespace Task2;
+
+public interface INumberParser
 {
-    public interface INumberParser
-    {
-        int Parse(string stringValue);
-    }
+    int Parse(string stringValue);
 }

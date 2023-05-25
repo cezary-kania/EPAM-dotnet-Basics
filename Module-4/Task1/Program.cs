@@ -1,29 +1,16 @@
 ﻿using System;
 
-namespace Task1
+while (true)
 {
-    internal class Program
+    try
     {
-        private static void Main(string[] args)
-        {
-            while (true)
-            {
-                try
-                {
-                    Console.WriteLine("Enter new line:");
-                    var input = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(input))
-                    {
-                        throw new ArgumentException("Input cannot be empty.", nameof(input));
-                    }
-                    var firstCharacter = input[0];
-                    Console.WriteLine($"Output: {firstCharacter}");
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                }
-            }
-        }
+        Console.WriteLine("Enter new line:");
+        var input = Console.ReadLine();
+        var firstCharacter = input[0];
+        Console.WriteLine($"Output: {firstCharacter}");
+    }
+    catch (IndexOutOfRangeException ex)
+    {
+        Console.WriteLine("Error: Input cannot be empty.");
     }
 }
