@@ -1,10 +1,16 @@
-﻿namespace Task1
+﻿using System;
+
+while (true)
 {
-    internal class Program
+    try
     {
-        private static void Main(string[] args)
-        {
-            // TODO: Implement the task here.
-        }
+        Console.WriteLine("Enter new line:");
+        var input = Console.ReadLine();
+        var firstCharacter = input[0];
+        Console.WriteLine($"Output: {firstCharacter}");
+    }
+    catch (IndexOutOfRangeException ex)
+    {
+        Console.WriteLine("Error: Input cannot be empty.");
     }
 }

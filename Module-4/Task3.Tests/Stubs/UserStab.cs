@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using Task3.DoNotChange;
 
-namespace Task3.Tests.Stubs
+namespace Task3.Tests.Stubs;
+
+internal class UserStab : IUser
 {
-    internal class UserStab : IUser
+    public IList<UserTask> Tasks { get; } = new List<UserTask>
     {
-        public IList<UserTask> Tasks { get; } = new List<UserTask>
-        {
-            new UserTask("task1"),
-            new UserTask("task2"),
-            new UserTask("task3")
-        };
-    }
+        new("task1"),
+        new("task2"),
+        new("task3")
+    };
 }
