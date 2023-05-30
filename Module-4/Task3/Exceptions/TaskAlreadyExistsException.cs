@@ -2,7 +2,7 @@
 
 namespace Task3.Exceptions;
 
-public class TaskAlreadyExistsException : Exception
+public class TaskAlreadyExistsException : AppValidationException
 {
     public TaskAlreadyExistsException() : base("The task already exists")
     {

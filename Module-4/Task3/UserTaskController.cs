@@ -1,5 +1,6 @@
 ﻿using System;
 using Task3.DoNotChange;
+using Task3.Exceptions;
 
 namespace Task3;
 
@@ -19,7 +20,7 @@ public class UserTaskController
             var task = new UserTask(description);
             _taskService.AddTaskForUser(userId, task);
         }
-        catch (Exception ex)
+        catch (AppValidationException ex)
         {
             model.AddAttribute("action_result", ex.Message);
             return false;

@@ -2,7 +2,7 @@
 
 namespace Task3.Exceptions;
 
-public class UserNotFoundException : Exception
+public class UserNotFoundException : AppValidationException
 {
     public UserNotFoundException() : base("User not found")
     {

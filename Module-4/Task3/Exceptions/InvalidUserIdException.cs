@@ -2,7 +2,7 @@
 
 namespace Task3.Exceptions;
 
-public class InvalidUserIdException : ArgumentException
+public class InvalidUserIdException : AppValidationException
 {
     public InvalidUserIdException() : base("Invalid userId")
     {
