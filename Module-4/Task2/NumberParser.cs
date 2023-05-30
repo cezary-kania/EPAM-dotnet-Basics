@@ -21,7 +21,7 @@ public class NumberParser : INumberParser
             throw new FormatException(invalidFormatMessage);
         }
         long result = 0;
-        for (var i = startIndex; i < trimmedStringValue.Length; ++i)
+        for (var i = startIndex; i < trimmedStringValue.Length; i++)
         {
             if (trimmedStringValue[i] < '0' || trimmedStringValue[i] > '9')
             {
