@@ -68,10 +68,7 @@ public class ConfigurationComponentBase
     }
     private object? GetConvertedValue(Type propertyType, object value)
     {
-        if(_customTypeConverters.TryGetValue(propertyType, out var converter))
-        {
-            return converter.Invoke(value);
-        }
-        return Convert.ChangeType(value, propertyType);
+        return _customTypeConverters.TryGetValue(propertyType, out var converter) 
+            ? converter.Invoke(value) : Convert.ChangeType(value, propertyType);
     }
 }
