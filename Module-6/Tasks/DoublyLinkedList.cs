@@ -7,21 +7,13 @@ namespace Tasks;
 
 public class DoublyLinkedList<T> : IDoublyLinkedList<T>
 {
-    private Node _head;
+    private Node<T> _head;
+    private Node<T> _tail;
     public int Length { get; private set; }
     
     public void Add(T e)
     {
-        var newNode = new Node(e);
-        if (_head is null)
-        {
-            _head = newNode;
-        }
-        else
-        {
-            AddAtTheEnd(newNode);
-        }
-        Length++;
+        AddAt(Length, e);
     }
 
     public void AddAt(int index, T e)
@@ -30,18 +22,38 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>
         {
             throw new IndexOutOfRangeException();
         }
-        var newNode = new Node(e);
+        var newNode = new Node<T>(e);
         if (index == Length)
         {
-            AddAtTheEnd(newNode);
+            if (_head is null)
+            {
+                _head = newNode;
+            }
+            else
+            {
+                newNode.Previous = _tail;
+                _tail.Next = newNode;
+            }
+            _tail = newNode;
+        } else if (index == 0)
+        {
+            newNode.Next = _head;
+            _head = newNode;
         }
         else
         {
-            PutNodeAt(index, newNode);
-        }
-        if (index == 0)
-        {
-            _head = newNode;
+            var current = _head;
+            for (var i = 0; i < index; i++)
+            {
+                current = current.Next;
+            }
+            newNode.Previous = current.Previous;
+            newNode.Next = current;
+            if (current.Previous is not null)
+            {
+                current.Previous.Next = newNode;
+            }
+            current.Previous = newNode;
         }
         Length++;
     }
@@ -55,27 +67,18 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>
 
     public IEnumerator<T> GetEnumerator()
     {
-        return new NodeEnumerator(_head);
+        return new NodeEnumerator<T>(_head);
     }
 
     public void Remove(T item)
     {
         var currentNode = _head;
-        while (currentNode is not null)
+        for (var i = 0; currentNode is not null; i++)
         {
             if (item.Equals(currentNode.Data))
             {
-                if (currentNode != _head)
-                {
-                    currentNode.Previous.Next = currentNode.Next;
-                }
-
-                if (currentNode.Next is not null)
-                {
-                    currentNode.Next.Previous = currentNode.Previous;
-                }
-                
-                Length--;
+                RemoveAt(i);
+                break;
             }
             currentNode = currentNode.Next;
         }
@@ -88,6 +91,10 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>
         if (currentNode.Previous is not null)
         {
             currentNode.Previous.Next = currentNode.Next;
+        }
+        else
+        {
+            _head = currentNode.Next;
         }
         if (currentNode.Next is not null)
         {
@@ -102,32 +109,7 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>
         return GetEnumerator();
     }
     
-    private Node GetTail() => GetNodeAt(Math.Max(0, Length - 1));
-    
-    private void PutNodeAt(int index, Node newNode)
-    {
-        var current = _head;
-        for (var i = 0; i < index; i++)
-        {
-            current = current.Next;
-        }
-        newNode.Previous = current.Previous;
-        newNode.Next = current;
-        if (current.Previous is not null)
-        {
-            current.Previous.Next = newNode;
-        }
-        current.Previous = newNode;
-    }
-    
-    private void AddAtTheEnd(Node newNode)
-    {
-        var tail = GetTail();
-        newNode.Previous = tail;
-        tail.Next = newNode;
-    }
-    
-    private Node GetNodeAt(int index)
+    private Node<T> GetNodeAt(int index)
     {
         var current = _head;
         for (var i = 0; i < index; i++)
@@ -142,56 +124,6 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>
         if (Length == 0 || index >= Length || index < 0)
         {
             throw new IndexOutOfRangeException();
-        }
-    }
-
-    private class NodeEnumerator : IEnumerator<T>
-    {
-        private Node _headNode;
-        private Node _currentNode;
-        public NodeEnumerator(Node headNode)
-        {
-            ArgumentNullException.ThrowIfNull(headNode, nameof(headNode));
-            _headNode = headNode;
-        }
-        public bool MoveNext()
-        {
-            if (_currentNode is null)
-            {
-                _currentNode = _headNode;
-                return true;
-            }
-            if (_currentNode?.Next is null)
-            {
-                return false;
-            }
-            _currentNode = _currentNode.Next;
-            return true;
-        }
-
-        public void Reset()
-        {
-            _currentNode = _headNode;
-        }
-
-        public T Current => _currentNode.Data;
-
-        object IEnumerator.Current => Current;
-
-        public void Dispose()
-        {
-        }
-    }
-
-    private class Node
-    {
-        public T Data { get; }
-        public Node Next { get; set; }
-        public Node Previous { get; set; }
-
-        public Node(T data)
-        {
-            Data = data;
         }
     }
 }
