@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OddEven", "OddEven\OddEven.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OddEven.Tests", "OddEven.Tests\OddEven.Tests.csproj", "{ACC5D565-FF23-4E3C-8C30-B864B7D0B333}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OddEvenUI", "OddEvenUI\OddEvenUI.csproj", "{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{ACC5D565-FF23-4E3C-8C30-B864B7D0B333}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACC5D565-FF23-4E3C-8C30-B864B7D0B333}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACC5D565-FF23-4E3C-8C30-B864B7D0B333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
