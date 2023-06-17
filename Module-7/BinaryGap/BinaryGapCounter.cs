@@ -12,11 +12,7 @@ public static class BinaryGapCounter
         {
             if (digit is '1')
             {
-                if (currentGap > maxGap)
-                {
-                    maxGap = currentGap;
-                }
-
+                maxGap = Math.Max(maxGap, currentGap);
                 currentGap = 0;
             }
             else
