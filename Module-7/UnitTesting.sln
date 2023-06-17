@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryGap", "BinaryGap\Bina
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryGap.Tests", "BinaryGap.Tests\BinaryGap.Tests.csproj", "{FEDAC417-A563-44D4-AAD2-8175B41ED6C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Tests", "Sudoku.Tests\Sudoku.Tests.csproj", "{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku", "Sudoku\Sudoku.csproj", "{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{FEDAC417-A563-44D4-AAD2-8175B41ED6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEDAC417-A563-44D4-AAD2-8175B41ED6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEDAC417-A563-44D4-AAD2-8175B41ED6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
