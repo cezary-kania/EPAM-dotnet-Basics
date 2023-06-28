@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryGap", "BinaryGap\BinaryGap.csproj", "{89344068-A215-43A9-94BA-8D51B2582FB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryGap.Tests", "BinaryGap.Tests\BinaryGap.Tests.csproj", "{FEDAC417-A563-44D4-AAD2-8175B41ED6C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Tests", "Sudoku.Tests\Sudoku.Tests.csproj", "{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku", "Sudoku\Sudoku.csproj", "{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OddEven", "OddEven\OddEven.csproj", "{FD08CC5D-2534-4B86-90E4-559F8F79190B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OddEven.Tests", "OddEven.Tests\OddEven.Tests.csproj", "{ACC5D565-FF23-4E3C-8C30-B864B7D0B333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OddEvenUI", "OddEvenUI\OddEvenUI.csproj", "{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89344068-A215-43A9-94BA-8D51B2582FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89344068-A215-43A9-94BA-8D51B2582FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89344068-A215-43A9-94BA-8D51B2582FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89344068-A215-43A9-94BA-8D51B2582FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEDAC417-A563-44D4-AAD2-8175B41ED6C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEDAC417-A563-44D4-AAD2-8175B41ED6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEDAC417-A563-44D4-AAD2-8175B41ED6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEDAC417-A563-44D4-AAD2-8175B41ED6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{080ACB9E-DEBD-492C-B3C2-F7B1FC3FF6FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED760B6-EBFA-4EAA-9D38-63D18995A36A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD08CC5D-2534-4B86-90E4-559F8F79190B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD08CC5D-2534-4B86-90E4-559F8F79190B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD08CC5D-2534-4B86-90E4-559F8F79190B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD08CC5D-2534-4B86-90E4-559F8F79190B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC5D565-FF23-4E3C-8C30-B864B7D0B333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC5D565-FF23-4E3C-8C30-B864B7D0B333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC5D565-FF23-4E3C-8C30-B864B7D0B333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC5D565-FF23-4E3C-8C30-B864B7D0B333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A9A22F-84E5-4A2B-9F20-AE2ED704AA23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
