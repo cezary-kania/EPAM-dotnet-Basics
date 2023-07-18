@@ -2,19 +2,19 @@
 
 var department = new Department
 {
-    DepartmentName = "Sample department 1 ",
+    DepartmentName = "IT",
     Employees = new List<Employee>
     {
-        new("SD-1 Employee 1"),
-        new("SD-1 Employee 2")
+        new("Frodo Baggins"),
+        new("Jack Daniels")
     }
 };
 
 var clonedDepartment = department.DeepClone();
 
-clonedDepartment.DepartmentName = "Updated Name";
+clonedDepartment.DepartmentName = "HR";
 clonedDepartment.Employees
-    .Add(new Employee("SD-1 Employee 3"));
+    .Add(new Employee("Simon Jackson"));
 
 Console.WriteLine(department);
 Console.WriteLine(clonedDepartment);

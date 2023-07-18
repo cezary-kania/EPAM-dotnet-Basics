@@ -4,6 +4,6 @@ namespace Task1.XMLSerialization;
 
 public record Employee
 {
-    [XmlElement(ElementName = "Name")]
+    [XmlElement(ElementName = "name")]
     public string EmployeeName { get; set; }
 }

@@ -3,11 +3,11 @@ using Task1.BinarySerialization;
 
 var department = new Department
 (
-    "Sample department 1 ",
+    "IT",
     new List<Employee>
     {
-        new("SD-1 Employee 1"),
-        new("SD-1 Employee 2")
+        new("Jack Daniels"),
+        new("Frodo Baggins")
     }
 );
 Console.WriteLine($"Department before serialization: {department}");

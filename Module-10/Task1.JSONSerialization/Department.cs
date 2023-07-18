@@ -5,7 +5,7 @@ namespace Task1.JSONSerialization;
 
 public record Department
 {
-    [JsonPropertyName("Name")]
+    [JsonPropertyName("name")]
     [JsonPropertyOrder(1)]
     public string DepartmentName { get; init; }
     

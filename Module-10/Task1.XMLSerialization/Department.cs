@@ -5,7 +5,7 @@ namespace Task1.XMLSerialization;
 
 public record Department
 {
-    [XmlElement(ElementName = "Name")]
+    [XmlElement(ElementName = "name")]
     public string? DepartmentName { get; set; }
     
     public List<Employee>? Employees { get; set; }

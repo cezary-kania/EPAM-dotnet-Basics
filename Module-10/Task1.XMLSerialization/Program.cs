@@ -3,11 +3,11 @@ using Task1.XMLSerialization;
 
 var department = new Department
 {
-    DepartmentName = "Sample department 1 ",
+    DepartmentName = "IT",
     Employees = new List<Employee>
     {
-        new() { EmployeeName = "SD-1 Employee 1" },
-        new() { EmployeeName = "SD-1 Employee 2" },
+        new() { EmployeeName = "Jack Daniels" },
+        new() { EmployeeName = "Frodo Baggins" },
     }
 };
 Console.WriteLine($"Department before serialization: {department}");

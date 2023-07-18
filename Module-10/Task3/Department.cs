@@ -1,14 +1,13 @@
-﻿using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
+﻿using System.Text;
+using System.Text.Json;
 
 namespace Task3;
 
-[Serializable]
 public record Department
 {
     public string DepartmentName { get; set; }
     public List<Employee> Employees { get; set; }
-    
+
     public override string ToString()
     {
         return new StringBuilder()
@@ -21,10 +20,7 @@ public record Department
     
     public Department DeepClone()
     {
-        using var stream = new MemoryStream();
-        var formatter = new BinaryFormatter();
-        formatter.Serialize(stream, this);
-        stream.Position = 0;
-        return (Department) formatter.Deserialize(stream);
+        var jsonString = JsonSerializer.Serialize(this);
+        return JsonSerializer.Deserialize<Department>(jsonString)!;
     }
 }
