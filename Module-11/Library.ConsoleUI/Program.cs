@@ -1,13 +1,21 @@
-﻿using System.Text.Json;
-using Library.Documents;
+﻿using Library.Data;
+using Library.Data.Interfaces;
 using Library.Services;
+using Library.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
-var config = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json")
+IConfiguration configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .Build();
 
-IDocumentService documentService = new DocumentService(config);
+var services = new ServiceCollection();
+services.AddSingleton(configuration);
+services.AddSingleton<IDocumentRepository,FileSystemDocumentRepository>();
+services.AddSingleton<IDocumentService,DocumentService>();
+var serviceProvider = services.BuildServiceProvider();
+
+var documentService = serviceProvider.GetRequiredService<IDocumentService>();
 
 while (true)
 {
@@ -33,7 +41,7 @@ while (true)
         Console.WriteLine("Found documents:");
         for (var i = 0; i < documents.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. Card Info: {documents[i]}");
+            Console.WriteLine($"{i + 1}. Card Info: {documents[i].GetCardInfo()}");
         }
     }
     else

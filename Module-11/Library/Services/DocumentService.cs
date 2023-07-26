@@ -1,6 +1,7 @@
-﻿using System.Runtime.Caching;
-using Library.Documents;
-using Library.Repositories;
+﻿using Library.Data;
+using Library.Data.Interfaces;
+using Library.Interfaces;
+using Library.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 
 namespace Library.Services;
@@ -9,12 +10,12 @@ public class DocumentService : IDocumentService
 {
     private readonly IDocumentRepository _repository;
 
-    public DocumentService(IConfigurationRoot config)
+    public DocumentService(IDocumentRepository repository)
     {
-        _repository = new FileSystemDocumentRepository(config);
+        _repository = repository;
     }
 
-    public IEnumerable<IDocument?> SearchByNumber(int documentNumber)
+    public List<IDocument> SearchByNumber(int documentNumber)
     {
         return _repository.GetByNumber(documentNumber);
     }
