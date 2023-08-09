@@ -1,0 +1,10 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=53d647c4_002D8e7e_002D4a6d_002Dbf89_002Dd4fbc60ba733/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Create_ShouldInsertNewOrder" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::FF97976A-7860-4250-8715-B37EF0595EC7::net7.0::DapperLibrary.Tests.Tests.OrderRepositoryTest&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFile&gt;FF97976A-7860-4250-8715-B37EF0595EC7/d:Tests/f:ProductRepositoryTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;Project Location="C:\Data\Dev\Learning\EPAM-dotnet-Basics\Module-14\EFLibrary.Tests" Presentation="&amp;lt;EFLibrary.Tests&amp;gt;" /&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
